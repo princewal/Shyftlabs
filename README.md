@@ -2,6 +2,8 @@
 
 This program is react based using react redux to manage state. Its makes a call to [Fake Store API](https://fakestoreapi.com/docs) which is handled in store. Then various components like App and Cart uses actions crated in the store to dispatch various commands and access to the store and it various items we need.
 
+The application can be viewed online on [Netlify](https://shyftlab-react.netlify.app)
+
 # Store Actions and Reducers
 
 The store has various actions that update the cart items in which we can remove, add, reduce and clear all the items in the cart items.

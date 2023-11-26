@@ -13,8 +13,10 @@ function App() {
   
   if (loading) {
     return (
-      <div className="loading">
-        <h2>Loading...</h2>
+      <div className="container">
+        <div className="loading">
+          <h2>Loading...</h2>
+        </div>
       </div>
     )
   }
