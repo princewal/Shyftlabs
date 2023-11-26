@@ -1,0 +1,155 @@
+.product-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: max-content;
+  width: 100%;
+
+  .product {
+    padding: 0.5rem;
+    position: relative;
+    border: 4px solid beige;
+    border-radius: 12px;
+    margin: 5px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    overflow: hidden;
+    transition: transform 0.4s ease-out;
+
+    > div {
+      padding: 5px 0;
+    }
+
+    .image {
+      max-height: 200px;
+      width: 100%;
+      img {
+        width: auto;
+        height: 100%;
+        margin: 0 auto
+      }
+    }
+
+    .title {
+      font-family: Roboto;
+      font-weight: 700;
+      font-size: 1.125rem;
+      span {
+        font-weight: 500;
+      }
+    }
+
+    .rating {
+      text-align: right;
+      font-size: 0.8rem;
+      font-style: italic;
+      font-weight: 500;
+    }
+
+    .desc {
+      font-size: 1rem;
+      font-style: italic;
+
+    }
+
+    .button-container {
+      align-self: flex-end;
+      margin-top: auto;
+    }
+
+    &:hover {
+      transform: scale(1.02);
+    }
+
+  }
+
+  @media (max-width: 640px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.cart-page {
+  padding: 1rem;
+  .cart-list {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    padding: 20px 0;
+    border-bottom: 1px solid gray;
+    
+    .product {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 10px;
+
+      .image {
+        width: 150px;
+        height: auto;
+        padding: 10px;
+        
+        img {
+          height: 100%;
+        }
+      }
+
+      .title {
+        font-family: Roboto;
+        font-weight: 700;
+        font-size: 1.125rem;
+
+        div {
+          padding-top: 25px;
+          
+        }
+      }
+    }
+    .total {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 1.25rem;
+
+      span {
+        display: inline-block;        
+        padding: 1px 5px;
+        margin: 0 10px;
+        border: 1px solid beige;
+      }
+
+      .quantity {
+        button {
+          padding: 5px;
+          font-weight: bold;
+        }
+
+      }
+    }
+  }
+  .cart-total {
+    text-align: right;
+    font-weight: 700;
+    font-size: 1.5rem;
+    display: flex;
+    padding-top: 10px;
+    justify-content: space-between;
+  }
+
+  @media (max-width: 640px) {
+    .cart-list {
+      .product, .total {
+        flex-direction: column;
+      }
+
+      .total {
+        justify-content: flex-end;
+        
+        .price {
+          padding-top: 10px;
+          font-size: 1.15rem;
+          font-weight: bold;
+        }
+      }
+      
+    }
+  }
+}
