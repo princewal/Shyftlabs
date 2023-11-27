@@ -28,7 +28,7 @@ function Product({ product }) {
         <img src={product.image} alt={product.title} />
       </div>
       <div className="rating">
-        {product.rating.rate} <span>({product.rating.count} reviews)</span> 
+        {product.rating.rate} / 5 <span>({product.rating.count} reviews)</span> 
       </div>
       <div className="title">
         {product.title} - <span>${ product.price }</span>

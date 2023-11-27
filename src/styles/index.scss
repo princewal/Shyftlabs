@@ -62,6 +62,8 @@ article {
   font-size: 1.25rem;
   font-weight: 700;
   padding: 10px 15px;
+  border-radius: 20px;
+  
 
   &.remove {
     background-color: transparent;
@@ -76,5 +78,22 @@ article {
     background-color: variables.$btn-secondary-color;
     border: 0;
   }
+
+  &.more-btn {
+    margin: 0 auto;
+    background-color: #e0e015;
+    color: black;
+    border: 0;
+    padding: 15px 20px;
+  }
+
+  @media (max-width: 640px) {
+    font-size: 1rem;
+  }
+}
+
+.more-container {
+  padding-top: 20px;
+  text-align: center;
 }
 

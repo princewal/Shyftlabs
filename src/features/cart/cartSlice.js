@@ -18,7 +18,11 @@ export const cartSlice = createSlice({
   initialState: {
     productList: [],
     cartItems: [],
+    displayList: [],
+    page: 1,
+    donePagination: false,
     loading: false,
+    fetchedData: false,
     error: null,
   },
   reducers: {
@@ -52,12 +56,28 @@ export const cartSlice = createSlice({
     clearCart: (state) => {
       state.cartItems = []
     },
+    updatePagination: (state, action) => {
+      if (state.donePagination) return
+
+      let currentStep = state.page * 10
+      let nextStep = (state.page + 1) * 10
+
+      if (currentStep - 1 < state.productList.length) {
+        state.displayList = state.productList.slice(0, nextStep)
+        state.page += 1
+      }
+      if (nextStep >= state.productList.length) {
+        state.donePagination = true
+      }
+    },
   },
   extraReducers: (builder) => {
     builder
       .addCase(fetchProducts.fulfilled, (state, action) => {
         state.productList = action.payload
         state.loading = false
+        state.fetchedData = true
+        state.displayList = action.payload.slice(0, 10)
       })
       .addCase(fetchProducts.pending, (state) => {
         state.loading = true
@@ -70,7 +90,12 @@ export const cartSlice = createSlice({
   },
 })
 
-export const { addToCart, reduceFromCart, removeFromCart, clearCart } =
-  cartSlice.actions
+export const {
+  addToCart,
+  reduceFromCart,
+  removeFromCart,
+  clearCart,
+  updatePagination,
+} = cartSlice.actions
 
 export default cartSlice.reducer

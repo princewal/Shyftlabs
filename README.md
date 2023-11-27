@@ -46,4 +46,24 @@ This contains the Root component required for react router v6.4+
 
 ## pages
 
-This folder contains the pages.
+This folder contains the pages mainly meant for routing.
+
+# Pagination
+
+Simple pagination was used. There are certain things that update in store which helps us in keep the pagination. Both state and reducers have properties which help us in pagination. Note I kept the pagination length to 10 as FakeApi sometimes returns 20 items
+
+## State
+
+### displayList
+
+In state we have displayList which is subset of the all productList. The amount of the subste depends on which step we are.
+
+### page
+
+This property helps us keep track of how many pages to show in scroll.
+
+## reducers
+
+### updatePagination
+
+This action checks of pagination is done or not. If done return. Otherwise check to see if current step that is amount of display items is less that productList lenght, if yes then we can add one more to the page, increase displayList size to 10 more items. Then we check if the next step if we is bigger than length of productList, if yes then we done with pagination.

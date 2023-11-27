@@ -55,6 +55,7 @@
     .button-container {
       align-self: flex-end;
       margin-top: auto;
+      padding-top: 15px;
     }
 
     &:hover {
@@ -65,6 +66,15 @@
 
   @media (max-width: 640px) {
     grid-template-columns: repeat(2, 1fr);
+    
+    .product {
+      .title {
+        font-size: 1rem;
+      }
+      .desc {
+        font-size: 14px;
+      }
+    }
   }
 }
 
