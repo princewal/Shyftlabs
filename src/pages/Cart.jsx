@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux"
 import { addToCart, clearCart, reduceFromCart, removeFromCart } from "../features/cart/cartSlice"
 import Button from "../components/button/Button"
+import { Link } from "react-router-dom"
 
 
 function Cart() {
@@ -27,6 +28,9 @@ function Cart() {
   if (cartItems.length < 1) {
     return (
       <div className="empty-cart">
+        <div className="back-to-products">
+         <Link to="/"> back to products</Link>
+        </div>
         <h2>Your cart is empty</h2>
       </div>
     )
@@ -34,6 +38,9 @@ function Cart() {
   return (
     <div className="cart-page">
       <h1>Shopping Cart</h1>
+      <div className="back-to-products">
+        <Link to="/"> back to all products</Link>
+      </div>
       {
         cartItems.map(product => {
           return <div className="cart-list" key={product.id}>

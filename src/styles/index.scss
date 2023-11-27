@@ -10,7 +10,8 @@
   font-weight: 400;
 
   color: variables.$primary-color;
-  background-color: variables.$primary-background-color;
+  background: variables.$primary-background-color url(../assets/bg-fabric.webp) repeat center center;
+  
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -95,5 +96,11 @@ article {
 .more-container {
   padding-top: 20px;
   text-align: center;
+}
+
+footer {
+  padding: 25px;
+  border: 2px solid gray;
+  margin-bottom: 25px;
 }
 

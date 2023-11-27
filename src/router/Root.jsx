@@ -6,6 +6,11 @@ const Root = () => {
     <div className="container">
       <Navbar />
       <Outlet />
+      <footer className="footer">
+        <div>
+          Made by Waleed for Shyft Labs. 
+        </div>
+      </footer>
     </div>
   )
 }

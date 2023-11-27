@@ -1,6 +1,6 @@
 .nav-container {
   width: 100%;
-  padding: 0.5rem;
+  padding: 1rem 0.5rem;
   display: flex;
   justify-content:space-between;
   flex-flow: row nowrap;
@@ -48,6 +48,10 @@
       display: inline-block;
     }
   }
+  .company-name {
+    font-weight: 700;
+    text-transform: uppercase;
+  }
 }
 
 .empty-cart {
@@ -56,4 +60,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  
+  .back-to-products {
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-decoration: underline;
+  }
 }
