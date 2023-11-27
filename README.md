@@ -4,6 +4,17 @@ This program is react based using react redux to manage state. Its makes a call 
 
 The application can be viewed online on [Netlify](https://shyftlab-react.netlify.app)
 
+### running the app
+
+to run the app your need to first clone the [repo](https://github.com/princewal/Shyftlabs)
+
+and in your terminal, making sure you node installed, give the command
+
+    npm i
+    npm run dev
+
+you will see the application running on localhost:5173
+
 # Store Actions and Reducers
 
 The store has various actions that update the cart items in which we can remove, add, reduce and clear all the items in the cart items.
